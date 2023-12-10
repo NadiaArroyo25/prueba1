@@ -6,9 +6,9 @@
   <% @medical_records.each do |medical_record| %>
     <%= render medical_record %>
     <p>
-      <%= link_to "Show this medical record", medical_record %>
+      <%= link_to "Show this medical record", patient_medical_record_path(medical_record.patient, medical_record) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New medical record", new_medical_record_path %>
+<%= link_to "New medical record", new_patient_medical_record_path(params[:patient_id]) %>
