@@ -1,2 +1,22 @@
+<%=provide(:titulo,"Nosotros")%>
+
 <h1>Staticas#nosotros</h1>
 <p>Find me in app/views/staticas/nosotros.html.erb</p>
+ <%# con el gato podemos comentat en ruby envebido %>
+<% if false %>
+ <% 5.times do |x|%>
+<%= x %>
+ <% end %>
+<% end %>
+
+<%= @mensaje %>
+<br>
+<%= " El controller dice:#{@mensaje}"%>
+<ul>
+<% @usuarios.each do |i| %>
+<%= "<li> #{i} </li>".html_safe%>
+<%end%>
+</ul>
+
+<%= link_to 'Home', root_path%>
+<%= link_to 'Contacto', staticas_contact_path%>

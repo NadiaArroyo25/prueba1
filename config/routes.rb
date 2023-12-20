@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get'staticas/otra'
   get'staticas/contact'
   get'staticas/nosotros'
-  resources :patients do
+ resources :patients do
     resources :medical_records
   end
   #Rails.application.routes.draw do
@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
- 
+ root "home#index"
 end
