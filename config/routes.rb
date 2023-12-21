@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'articulos/new'
+  get 'articulos/index'
 
   get'staticas/otra'
   get'staticas/contact'
@@ -7,6 +9,9 @@ Rails.application.routes.draw do
     resources :medical_records
   end
   #Rails.application.routes.draw do
+  #get 'articulos/new'
+  #get 'articulos/index'
+  resources :articulos
    # get 'privacidad', to: "statics#privacy"
    
     #get 'statics/privacy'
