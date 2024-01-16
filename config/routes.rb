@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :autors
   get 'articulos/new'
   get 'articulos/index'
 
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
     resources :medical_records
   end
   #Rails.application.routes.draw do
+  devise_for :autors
   #get 'articulos/new'
   #get 'articulos/index'
   resources :articulos

@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_21_062142) do
     t.integer "patient_id", null: false
     t.text "patology"
     t.text "habits"
-    t.string "current_state"
+    t.string "current_state", default: "Aparentemente sano"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["patient_id"], name: "index_medical_records_on_patient_id"
