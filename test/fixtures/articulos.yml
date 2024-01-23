@@ -3,11 +3,9 @@
 one:
   titulo: MyString
   contenido: MyText
-  autor: MyString
-  references: MyString
+  autor: one
 
 two:
   titulo: MyString
   contenido: MyText
-  autor: MyString
-  references: MyString
+  autor: two

@@ -29,6 +29,9 @@ gem "pry"
 
 gem 'devise', '~> 4.2'
 
+gem 'rails-ujs', '~> 0.1.0'
+#la puse para ver si funcioan el delete con link_to
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

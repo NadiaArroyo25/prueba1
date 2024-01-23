@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :autors
+  
   get 'articulos/new'
   get 'articulos/index'
 
