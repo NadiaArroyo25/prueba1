@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_18_050338) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_23_051424) do
   create_table "articulos", force: :cascade do |t|
     t.string "titulo"
     t.text "contenido"
@@ -30,6 +30,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_18_050338) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_autors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_autors_on_reset_password_token", unique: true
+  end
+
+  create_table "comentarios", force: :cascade do |t|
+    t.text "nombre"
+    t.string "texto"
+    t.integer "articulo_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["articulo_id"], name: "index_comentarios_on_articulo_id"
   end
 
   create_table "medical_records", force: :cascade do |t|
@@ -54,5 +63,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_18_050338) do
   end
 
   add_foreign_key "articulos", "autors"
+  add_foreign_key "comentarios", "articulos"
   add_foreign_key "medical_records", "patients"
 end

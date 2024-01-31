@@ -2,11 +2,5 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-// agregare esto a ver si asi se eliminan los articulos
 
-//= require jquery
-//= require rails-ujs
-//= require activestorage
-//= require turbolinks
-//= require_tree .
-
+ 
