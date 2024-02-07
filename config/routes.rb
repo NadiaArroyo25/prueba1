@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   get 'privacidad', to: "statics#privacy"
   get 'statics/about_us'
   get 'statics/contact'
@@ -14,5 +15,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  root "patients#index"
+  root 'home#index'
 end
