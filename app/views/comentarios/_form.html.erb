@@ -1,32 +1,16 @@
-<%= form_with(model: comentario) do |form| %>
-  <% if comentario.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(comentario.errors.count, "error") %> prohibited this comentario from being saved:</h2>
-
-      <ul>
-        <% comentario.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for([@articulo, @articulo.comentarios.build]) do |f| %>
 
   <div>
-    <%= form.label :nombre, style: "display: block" %>
-    <%= form.text_area :nombre %>
+    <%= f.label :nombre, style: "display: block" %>
+    <%= f.text_field :nombre %>
   </div>
 
   <div>
-    <%= form.label :texto, style: "display: block" %>
-    <%= form.text_field :texto %>
+    <%= f.label :texto, style: "display: block" %>
+    <%= f.text_area :texto %>
   </div>
 
   <div>
-    <%= form.label :articulo_id, style: "display: block" %>
-    <%= form.text_field :articulo_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>

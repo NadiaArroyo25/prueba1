@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :comentarios
-  
+  #resources :comentarios no se por que hay dos 
   get 'articulos/new'
   get 'articulos/index'
 
@@ -11,11 +10,17 @@ Rails.application.routes.draw do
     resources :medical_records
   end
   #Rails.application.routes.draw do
-  resources :comentarios
+  #resources :comentarios  esta se quito y en su lugar se puso la de abajo
+  resources :articulos do 
+    resources :comentarios
+  end
   devise_for :autors
+  get '*path' => redirect('/')
+
+
   #get 'articulos/new'
   #get 'articulos/index'
-  resources :articulos
+
    # get 'privacidad', to: "statics#privacy"
    
     #get 'statics/privacy'

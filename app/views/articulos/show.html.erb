@@ -5,6 +5,12 @@
 <p><%=@articulo.contenido%></p>
 
 <%= link_to "Editar", edit_articulo_path(@articulo)%> <br>
- <%= button_to "Eliminar este articulo", @articulo, method: :delete, data: {confirm:"¿seguro que quieres eliminar este artículo?"} %>
- 
+<%= button_to "Eliminar este articulo", @articulo, method: :delete, data: {confirm:"¿seguro que quieres eliminar este artículo?"} %>
+
+
+<p> <%= @articulo.comentarios.count %> Comentarios </p>
+<%= render @articulo.comentarios %>
+<br>
+<p><strong>Deja tu comentrio</strong></p>
+<%= render 'comentarios/form' %>
 
