@@ -8,6 +8,12 @@ class StaticsController < ApplicationController
     @dr_last_name = "Arroyo"
   end
 
+  def specialitie
+  end
+
+  def treatment
+  end
+
   def privacy
   end
 end

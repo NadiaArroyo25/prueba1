@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'statics/about_us'
   get 'statics/contact'
   get 'statics/privacy'
+  get'statics/specialitie'
+  get'statics/treatment'
   resources :patients do
     resources :medical_records
   end

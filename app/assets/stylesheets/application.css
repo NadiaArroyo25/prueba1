@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+/* En tu archivo CSS personalizado */
+
+
+body {
+    background-color: #e2b1b1; 
+}
+
+  
