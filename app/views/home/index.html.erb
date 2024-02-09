@@ -1,5 +1,58 @@
-<h1>Home#index</h1>
-<p>En este link podemos encontrar la lista de los pacientes</p>
+</nav>
+<div id="carouselControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <%= image_tag("prueba.JPEG", alt: "prueba", class:"d-block w-100 ") %>
+    </div>
+    <div class="carousel-item ">
+      <%=image_tag("prueba.JPEG", alt: "prueba2", class:"d-block w-100") %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("prueba.JPEG", alt: "prueba3", class:"d-block w-100") %>
+    </div>
+  </div>
+ <button class="carousel-control-prev" type="button" data-target="#carouselControls" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-target="#carouselControls" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </button>
+</div>
 
-<%= link_to "PACIENTES", patients_path%>
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text">"Combinamos ciencia y tecnología para alcanzar efectividad no invasiva  y tratamientos duraderos"</p> 
+  </div>
+  </div>
+  <div class="overlay">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 offset-md-6 text-end">
+            <h1>INSERTAMOS INFORMACION </h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and 
+            typesetting industry. Lorem Ipsum has been the industry's 
+            standard dummy text ever since the 1500s, when an unknown 
+            printer took a galley of type and scrambled it to make a 
+            type specimen book. It has survived not only five centuries, 
+            but also the leap into electronic typesetting, remaining 
+            essentially unchanged. It was popularised in the 1960s with 
+            the release of Letraset sheets containing Lorem Ipsum passages, 
+            and more recently with desktop publishing software like Aldus
+             PageMaker including versions of Lorem Ipsum.
+            </p>
+            <a href="#" class="btn btn-outline-light"> Quiero saber mas </a>
+      
+             <%= link_to "Agenda tu cita", statics_contact_path, class:"btn btn-secondary btn-lg" %>
+       
+
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </main>
+  
 
