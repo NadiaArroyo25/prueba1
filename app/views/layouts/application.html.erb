@@ -13,30 +13,13 @@
   </head>
 
   <body>
+   <div> <%= render "shared/header"%> </div>
+   <p class="notice"><%= notice%></p>
+      <p class="alert"><%= alert %></p>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag("logo.png", alt: "Logo", width: 30, height: 24, class: "d-inline-block align-text-top") %>
-      Dra.Nadia Arroyo
-    <% end %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <%= link_to "Pacientes", patients_path, class: "nav-item nav-link" %>
-        <%= link_to "Acerca de nosotros", statics_about_us_path, class: "nav-item nav-link" %>
-        <%= link_to "Especialidades", statics_specialitie_path, class: "nav-item nav-link" %>
-        <%= link_to "Tratamientos", statics_treatment_path, class: "nav-item nav-link" %>
-        <%= link_to "Contacto", statics_contact_path, class: "nav-item nav-link" %>
-      </ul>
-    </div>
-  </div>
-  </nav>
-
-   <%= yield %>
+    <%= yield %>
     <div> <%= render "shared/footer"%> </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     

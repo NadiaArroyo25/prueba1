@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :usuarios
   get 'home/index'
   get 'privacidad', to: "statics#privacy"
   get 'statics/about_us'
