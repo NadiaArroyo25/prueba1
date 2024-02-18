@@ -1,15 +1,18 @@
 
 <div class="container mt-5 text-center">
-  <h1>Calendario</h1>
+  <h1>Agenda</h1>
 
-  <%= month_calendar(events: @appointments) do |date, appointments| %>
+  <%= week_calendar(events: @appointments) do |date, appointments| %>
     <%= date.day %>
 
     <% appointments.each do |appointment| %>
       <div class="event">
-        <%= appointment.title %>
-        <!-- Puedes mostrar otros detalles del evento aquí -->
+      <div class = "card-header">
+      
+        <%= link_to appointment.title, appointment_path(appointment) %>
       </div>
+      </div>
+  
     <% end %>
   <% end %>
 </div>

@@ -1,14 +1,18 @@
+<div class= "container ">
 <p style="color: green"><%= notice %></p>
+<h1> CITAS</h1>
 
-<h1>Appointments</h1>
+<%= link_to "Agenda Completa", agenda_agenda_path, class:"btn btn-outline-secondary btn-sm" %>
+
 
 <div id="appointments">
   <% @appointments.each do |appointment| %>
     <%= render appointment %>
     <p>
-      <%= link_to "Show this appointment", appointment %>
+      <%= link_to "Muestra esta cita", appointment %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New appointment", new_appointment_path %>
+<%= link_to "Nueva cita", new_appointment_path %>
+</div>
