@@ -1,0 +1,18 @@
+
+<div class="container mt-5 text-center">
+  <h1>Agenda</h1>
+
+  <%= week_calendar(events: @appointments) do |date, appointments| %>
+    <%= date.day %>
+
+    <% appointments.each do |appointment| %>
+      <div class="event">
+      <div class = "card-header">
+      
+        <%= link_to appointment.title, appointment_path(appointment) %>
+      </div>
+      </div>
+  
+    <% end %>
+  <% end %>
+</div>

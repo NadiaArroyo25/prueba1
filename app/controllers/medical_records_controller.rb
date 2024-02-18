@@ -3,7 +3,6 @@ class MedicalRecordsController < ApplicationController
 
   # GET /medical_records or /medical_records.json
   def index
-    binding.pry
     @medical_records = MedicalRecord.where(patient_id: params[:patient_id]).all
   end
 

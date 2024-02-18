@@ -15,9 +15,9 @@
         <%= link_to "Especialidades", statics_specialitie_path, class: "nav-item nav-link" %>
         <%= link_to "Tratamientos", statics_treatment_path, class: "nav-item nav-link" %>
         <%= link_to "Contacto", statics_contact_path, class: "nav-item nav-link" %>
-         <% if usuario_signed_in? %>
-          <%= button_to "Cerrar Sesión", destroy_usuario_session_path, method: :delete, class: "nav-item nav-link btn btn-outline-secondary btn-sm" %>
-          <%= link_to "Mis pacientes", patients_path, class: "nav-item nav-link" %>
+        <% if usuario_signed_in? %>
+        <%= link_to "Mis pacientes", patients_path, class: "nav-item nav-link" %>
+        <%= button_to "Cerrar Sesión", destroy_usuario_session_path, method: :delete, class: "nav-item nav-link btn btn-outline-secondary btn-sm" %>
         <% else %>
           <%= button_to "Iniciar Sesión", new_usuario_session_path, class: "nav-item nav-link btn btn-outline-secondary btn-sm" %>
         <% end %>
