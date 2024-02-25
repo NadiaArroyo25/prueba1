@@ -1,16 +1,13 @@
-# fly.toml app configuration file generated for dentalarr on 2024-02-18T17:30:00-06:00
+# fly.toml app configuration file generated for dentalarroyo on 2024-02-25T15:58:54-06:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'dentalarr'
+app = 'dentalarroyo'
 primary_region = 'phx'
 console_command = '/rails/bin/rails console'
 
 [build]
-
-[deploy]
-  release_command = './bin/rails db:prepare'
 
 [http_service]
   internal_port = 3000
