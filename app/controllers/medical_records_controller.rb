@@ -8,11 +8,11 @@ class MedicalRecordsController < ApplicationController
 
   # GET /medical_records/1 or /medical_records/1.json
   def show
-  end
+    end
 
   # GET /medical_records/new
   def new
-    @medical_record = MedicalRecord.new
+    @medical_record = MedicalRecord.new(patient_id: params[:patient_id])
   end
 
   # GET /medical_records/1/edit
@@ -24,8 +24,8 @@ class MedicalRecordsController < ApplicationController
     @medical_record = MedicalRecord.new(medical_record_params)
 
     respond_to do |format|
-      if @medical_record.save
-        format.html { redirect_to medical_record_url(@medical_record), notice: "Medical record was successfully created." }
+      if @medical_record.save  
+        format.html { redirect_to patient_medical_records_path(params[:patient_id]), notice: "Medical record was successfully created." }
         format.json { render :show, status: :created, location: @medical_record }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class MedicalRecordsController < ApplicationController
   def update
     respond_to do |format|
       if @medical_record.update(medical_record_params)
-        format.html { redirect_to medical_record_url(@medical_record), notice: "Medical record was successfully updated." }
+        format.html { redirect_to patient_medical_record_path(@medical_record), notice: "Medical record was successfully updated." }
         format.json { render :show, status: :ok, location: @medical_record }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -49,10 +49,11 @@ class MedicalRecordsController < ApplicationController
 
   # DELETE /medical_records/1 or /medical_records/1.json
   def destroy
+    @medical_record = MedicalRecord.find(params[:id])
     @medical_record.destroy!
 
     respond_to do |format|
-      format.html { redirect_to medical_records_url, notice: "Medical record was successfully destroyed." }
+      format.html { redirect_to patient_path(params[:patient_id]), notice: "Medical record was successfully destroyed." }
       format.json { head :no_content }
     end
   end

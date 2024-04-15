@@ -3,8 +3,8 @@
 <%= render @patient %>
 
 <div>
+ <%= link_to "Historia clinica", patient_medical_records_path(patient_id: @patient.id) %> |
   <%= link_to "Edit this patient", edit_patient_path(@patient) %> |
   <%= link_to "Back to patients", patients_path %>
-
   <%= button_to "Destroy this patient", @patient, method: :delete %>
 </div>

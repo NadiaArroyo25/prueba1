@@ -1,4 +1,4 @@
-<%= form_with(model: medical_record) do |form| %>
+<%= form_with(model: [medical_record.patient, medical_record]) do |form| %>
   <% if medical_record.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(medical_record.errors.count, "error") %> prohibited this medical_record from being saved:</h2>
