@@ -1,27 +1,28 @@
+<div class="container">
 <div id="<%= dom_id appointment %>">
-       
-  <p>
-    <strong>Title:</strong>
-    <%= appointment.title %>
-    
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= appointment.description %>
-  </p>
-
-  <p>
-    <strong>Start time:</strong>
-    <%= appointment.start_time %>
-  </p>
-
-  <p>
-    <strong>End time:</strong>
-    <%= appointment.end_time %>
-  </p>
-
+ <table class="table table-striped">
+  
+  <tbody>
+      <th scope="row">Nombre del paciente</th>
+      <td><%= appointment.title %></th>
+      
+    <tr>
+      <th scope="row">Description:</th>
+      <td><%= appointment.description %></td>
+    </tr>
+    <tr>
+      <th scope="row">Hora de inicio</th>
+      <td><%= appointment.start_time %></td>
+    </tr>
+    <tr>
+      <th scope="row">Final</th>
+      <td> <%= appointment.end_time %></td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 
  
         

@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
-
+<div class= "container ">
 <h1>Pacientes</h1>
-<%= link_to "Nuevo paciente", new_patient_path %>
+<%= link_to "Nuevo paciente", new_patient_path,class:"btn btn-outline-secondary btn-sm"%>
 
 <table class="table table-striped"> 
   <thead> 
@@ -15,18 +15,10 @@
       <tr>
         <td> <%= patient.first_name %> </td>
         <td> <%= patient.last_name %> </td>
+        <td> <%= link_to "Mostrar este paciente", patient %> </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<div id="patients">
-  <% @patients.each do |patient| %>
-    <%= render patient %>
-    <p>
-      <%= link_to "Mostrar paciente", patient %>
-    </p>
-  <% end %>
 </div>
-
 

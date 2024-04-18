@@ -1,10 +1,12 @@
+<div class="container">
 <p style="color: green"><%= notice %></p>
 
 <%= render @patient %>
 
 <div>
  <%= link_to "Historia clinica", patient_medical_records_path(patient_id: @patient.id) %> |
-  <%= link_to "Edit this patient", edit_patient_path(@patient) %> |
-  <%= link_to "Back to patients", patients_path %>
-  <%= button_to "Destroy this patient", @patient, method: :delete %>
+  <%= link_to "Edita este paciente", edit_patient_path(@patient) %> |
+  <%= link_to "Regresar apacientes", patients_path %>
+  <%= button_to "Eliminar este paciente", @patient, method: :delete, class:"btn btn-secondary" %>
+</div>
 </div>

@@ -4,15 +4,23 @@
 
 <%= link_to "CALENDARIO", agenda_agenda_path, class:"btn btn-outline-secondary btn-sm" %>
 
-
-<div id="appointments">
+<table class="table table-striped"> 
+  <thead> 
+    <tr> 
+      <th>Titulo</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @appointments.each do |appointment| %>
-    <%= render appointment %>
-    <p>
-      <%= link_to "Muestra esta cita", appointment %>
-    </p>
+  <tr>
+  <td><%=appointment.title%></td>
+  <td> <%=appointment.start_time%></td>
+  <td><%= link_to "Muestra esta cita", appointment,class:"btn btn-outline-secondary btn-sm" %> </td>
+  </tr>
   <% end %>
-</div>
+  </tbody>
+  </table>
+  </div>
 
-<%= link_to "Nueva cita", new_appointment_path %>
-</div>
+

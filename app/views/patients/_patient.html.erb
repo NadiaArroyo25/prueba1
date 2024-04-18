@@ -1,32 +1,32 @@
+<div class= "container">
 <div id="<%= dom_id patient %>">
-
-  <p>
-    <strong>Nombre:</strong>
-    <%= patient.first_name %>
-  </p>
-
-  <p>
-    <strong>Apellido:</strong>
-    <%= patient.last_name %>
-  </p>
-
-  <p>
-    <strong>Correo:</strong>
-    <%= patient.email %>
-  </p>
-
-  <p>
-    <strong>Dirección:</strong>
-    <%= patient.address %>
-  </p>
-
-  <p>
-    <strong>Edad:</strong>
-    <%= patient.age %>
-  </p>
-
-  <p>
-    <strong>Genero:</strong>
-    <%= patient.genre %>
-  </p>
+</div>
+<table class="table table-striped">
+  
+  <tbody>
+      <th scope="row">Nombre:</th>
+      <td><%= patient.first_name %></th>
+      
+    <tr>
+      <th scope="row">Apellido:</th>
+      <td><%= patient.last_name %></td>
+    </tr>
+    <tr>
+      <th scope="row">Correo:</th>
+      <td><%= patient.email %></td>
+    </tr>
+    <tr>
+      <th scope="row">Dirección:</th>
+      <td><%= patient.address %></td>
+    </tr>
+    <tr>
+      <th scope="row">Edad:</th>
+      <td><%= patient.age %></td>
+    </tr>
+    <tr>
+      <th scope="row">Genero:</th>
+      <td><%= patient.genre %></td>
+    </tr>
+  </tbody>
+</table>
 </div>

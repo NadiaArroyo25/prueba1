@@ -1,17 +1,21 @@
 <div id="<%= dom_id medical_record %>">
-  <p>
-    <strong>Patology:</strong>
-    <%= medical_record.patology %>
-  </p>
-
-  <p>
-    <strong>Habits:</strong>
-    <%= medical_record.habits %>
-  </p>
-
-  <p>
-    <strong>Current state:</strong>
-    <%= medical_record.current_state %>
-  </p>
-
+<table class="table table-striped">
+  
+  <tbody>
+      <th scope="row">Patologías:</th>
+      <td><%= medical_record.patology %></th>
+      
+    <tr>
+      <th scope="row">Habitos:</th>
+      <td><%= medical_record.habits %></td>
+    </tr>
+    <tr>
+      <th scope="row">Esta de salud:</th>
+      <td><%=medical_record.current_state %></td>
+    </tr>
+  </tbody>
+</table>
 </div>
+  
+
+
