@@ -32,6 +32,11 @@
   </div>
 
   <div>
+  <%= form.label :notes, style: "display: block" %>
+    <%= form.text_area :notes, rows: 5 %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_10_213506) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_18_053634) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "appointments", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -57,6 +60,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_10_213506) do
     t.string "current_state", default: "Aparentemente sano"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "notes"
     t.index ["patient_id"], name: "index_medical_records_on_patient_id"
   end
 
