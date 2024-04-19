@@ -13,7 +13,13 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records/new
   def new
     @medical_record = MedicalRecord.new(patient_id: params[:patient_id])
+    @medical_record.build_image_attachment
+
+    if params[:medical_record] && params[:medical_record][:image]
+    @medical_record.image.attach(params[:medical_record][:image])
+    end
   end
+  
 
   # GET /medical_records/1/edit
   def edit
@@ -22,6 +28,8 @@ class MedicalRecordsController < ApplicationController
   # POST /medical_records or /medical_records.json
   def create
     @medical_record = MedicalRecord.new(medical_record_params)
+    @medical_record.image.attach(params[:medical_record][:image]) if params[:medical_record][:image]
+ 
 
     respond_to do |format|
       if @medical_record.save  
@@ -37,6 +45,7 @@ class MedicalRecordsController < ApplicationController
   # PATCH/PUT /medical_records/1 or /medical_records/1.json
   def update
     respond_to do |format|
+      
       if @medical_record.update(medical_record_params)
         format.html { redirect_to patient_medical_record_path(@medical_record), notice: "Medical record was successfully updated." }
         format.json { render :show, status: :ok, location: @medical_record }
@@ -66,6 +75,7 @@ class MedicalRecordsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def medical_record_params
-      params.require(:medical_record).permit(:patient_id, :patology, :habits, :current_state, :notes)
+      params.require(:medical_record).permit(:patient_id, :patology, :habits, :current_state, :notes, :image )
     end
 end
+ 
