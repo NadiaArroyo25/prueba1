@@ -8,7 +8,7 @@ class MedicalRecordsController < ApplicationController
 
   # GET /medical_records/1 or /medical_records/1.json
   def show
-    end
+  end
 
   # GET /medical_records/new
   def new
@@ -16,10 +16,9 @@ class MedicalRecordsController < ApplicationController
     @medical_record.build_image_attachment
 
     if params[:medical_record] && params[:medical_record][:image]
-    @medical_record.image.attach(params[:medical_record][:image])
+      @medical_record.image.attach(params[:medical_record][:image])
     end
   end
-  
 
   # GET /medical_records/1/edit
   def edit
@@ -30,7 +29,6 @@ class MedicalRecordsController < ApplicationController
     @medical_record = MedicalRecord.new(medical_record_params)
     @medical_record.image.attach(params[:medical_record][:image]) if params[:medical_record][:image]
  
-
     respond_to do |format|
       if @medical_record.save  
         format.html { redirect_to patient_medical_records_path(params[:patient_id]), notice: "Medical record was successfully created." }
@@ -45,7 +43,6 @@ class MedicalRecordsController < ApplicationController
   # PATCH/PUT /medical_records/1 or /medical_records/1.json
   def update
     respond_to do |format|
-      
       if @medical_record.update(medical_record_params)
         format.html { redirect_to patient_medical_record_path(@medical_record), notice: "Medical record was successfully updated." }
         format.json { render :show, status: :ok, location: @medical_record }
@@ -69,9 +66,9 @@ class MedicalRecordsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_medical_record
-      @medical_record = MedicalRecord.find(params[:id])
-    end
+  def set_medical_record
+    @medical_record = MedicalRecord.find(params[:id])
+  end
 
     # Only allow a list of trusted parameters through.
     def medical_record_params
