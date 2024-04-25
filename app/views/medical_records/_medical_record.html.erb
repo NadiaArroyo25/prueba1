@@ -1,10 +1,9 @@
 <div id="<%= dom_id medical_record %>">
 <table class="table table-striped">
-  
   <tbody>
       <th scope="row">Patologías:</th>
-      <td><%= medical_record.patology %></th>
-      
+      <td><%= medical_record.patology %></td>
+
     <tr>
       <th scope="row">Habitos:</th>
       <td><%= medical_record.habits %></td>
@@ -13,9 +12,14 @@
       <th scope="row">Esta de salud:</th>
       <td><%=medical_record.current_state %></td>
     </tr>
+    <tr>
+      <th scope="row">Notas</th>
+      <td><%= medical_record.notes %></td>
+    </tr>
+
   </tbody>
 </table>
 </div>
-  
+
 
 
