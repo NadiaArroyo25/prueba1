@@ -36,7 +36,7 @@ class MedicalRecordsController < ApplicationController
   # PATCH/PUT /medical_records/1 or /medical_records/1.json
   def update
     respond_to do |format|
-      if @medical_record.update(medical_record_params.except(:image_location))
+      if @medical_record.update(medical_record_params)
         format.html { redirect_to patient_medical_record_path(@medical_record), notice: "Medical record was successfully updated." }
         format.json { render :show, status: :ok, location: @medical_record }
       else
