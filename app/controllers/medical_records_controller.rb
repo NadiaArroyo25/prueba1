@@ -4,9 +4,6 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records or /medical_records.json
   def index
     @medical_records = MedicalRecord.where(patient_id: params[:patient_id]).all
-    @medical_records.each do |medical_record|
-    medical_record.image_location = "Odontogram.jpg"
-    end
   end
 
   # GET /medical_records/1 or /medical_records/1.json
@@ -16,8 +13,7 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records/new
   def new
     @medical_record = MedicalRecord.new(patient_id: params[:patient_id])
-    @medical_record.image_location ="Odontogram.jpg"
-  end
+   end
 
   # GET /medical_records/1/edit
   def edit
@@ -25,7 +21,7 @@ class MedicalRecordsController < ApplicationController
 
   # POST /medical_records or /medical_records.json
   def create
-    @medical_record = MedicalRecord.new(medical_record_params.except(:image_location))
+    @medical_record = MedicalRecord.new(medical_record_params)
     respond_to do |format|
       if @medical_record.save
         format.html { redirect_to patient_medical_records_path(params[:patient_id]), notice: "Medical record was successfully created." }
@@ -69,6 +65,6 @@ class MedicalRecordsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def medical_record_params
-      params.require(:medical_record).permit(:patient_id, :patology, :habits, :current_state, :notes, :image_location)
+      params.require(:medical_record).permit(:patient_id, :patology, :habits, :current_state, :notes)
     end
   end
