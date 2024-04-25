@@ -13,7 +13,7 @@ class MedicalRecordsController < ApplicationController
   # GET /medical_records/new
   def new
     @medical_record = MedicalRecord.new(patient_id: params[:patient_id])
-   end
+  end
 
   # GET /medical_records/1/edit
   def edit
