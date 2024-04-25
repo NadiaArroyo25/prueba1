@@ -2,6 +2,7 @@
 <%= form_with(model: [medical_record.patient, medical_record]) do |form| %>
   <% if medical_record.errors.any? %>
     <div style="color: red">
+
       <h2><%= pluralize(medical_record.errors.count, "error") %> prohibited this medical_record from being saved:</h2>
 
       <ul>
@@ -11,6 +12,7 @@
       </ul>
     </div>
   <% end %>
+
   <div>
     <%= form.label :patient_id, style: "display: block" %>
     <p><%= medical_record.patient_id %></p>
@@ -36,10 +38,11 @@
     <%= form.label :notes, style: "display: block" %>
     <%= form.text_area :notes, rows: 5 %>
   </div>
+
   <div>
-  <% if medical_record.image_location.present? %>
-  <%= image_tag(medical_record.image_location, class: "d-block w-100") %>
-  <% end %>
+    <% if medical_record.image_location.present? %>
+      <%= image_tag(medical_record.image_location, class: "d-block w-100") %>
+    <% end %>
   </div>
 
   <div>
