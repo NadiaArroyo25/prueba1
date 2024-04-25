@@ -1,19 +1,20 @@
+<div class="container">
 <%= form_with(model: [medical_record.patient, medical_record]) do |form| %>
   <% if medical_record.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(medical_record.errors.count, "error") %> prohibited this medical_record from being saved:</h2>
 
       <ul>
-        <% medical_record.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% medical_record.errors.full_messages.each do |error| %>
+          <li><%= error.html_safe %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
   <div>
     <%= form.label :patient_id, style: "display: block" %>
-    <%= form.text_field :patient_id %>
+    <p><%= medical_record.patient_id %></p>
+    <%= form.hidden_field :patient_id %>
   </div>
 
   <div>
@@ -32,17 +33,17 @@
   </div>
 
   <div>
-  <%= form.label :notes, style: "display: block" %>
+    <%= form.label :notes, style: "display: block" %>
     <%= form.text_area :notes, rows: 5 %>
+  </div>
+  <div>
+  <% if medical_record.image_location.present? %>
+  <%= image_tag(medical_record.image_location, class: "d-block w-100") %>
+  <% end %>
   </div>
 
   <div>
     <%= form.submit %>
   </div>
-  <% if @medical_record.image.attached? %>
-  <%= image_tag("Odontogram.jpg", alt: "odontograma", class:"d-block w-100") %>
-
-  <% end%>
 <% end %>
-
-
+</div>

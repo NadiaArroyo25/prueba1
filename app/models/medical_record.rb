@@ -1,4 +1,5 @@
 class MedicalRecord < ApplicationRecord
   belongs_to :patient
-  has_one_attached :image
+
+  attr_accessor :image_location
 end
