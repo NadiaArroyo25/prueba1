@@ -24,6 +24,10 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
 
     respond_to do |format|
+      if @appointment.start_time < Time.now
+        flash[:error] = "No se pueden agregar citas en el pasado."
+        render :new
+      else
       if @appointment.save
         format.html { redirect_to appointment_url(@appointment), notice: "Appointment was successfully created." }
         format.json { render :show, status: :created, location: @appointment }
@@ -32,6 +36,7 @@ class AppointmentsController < ApplicationController
         format.json { render json: @appointment.errors, status: :unprocessable_entity }
       end
     end
+  end
   end
 
   # PATCH/PUT /appointments/1 or /appointments/1.json
