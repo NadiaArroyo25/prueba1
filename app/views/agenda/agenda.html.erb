@@ -1,29 +1,29 @@
 <div class="simple-calendar">
- <div class="container mt-5 text-center">
-  <h1>Agenda</h1>
-  <%= link_to "Crea tu cita", new_appointment_path, class:"btn btn-outline-secondary btn-sm" %>
-  <%= week_calendar(events: @appointments) do |date, appointments| %>
-    <%= date.day %>
+  <div class="container mt-5 text-center">
+    <h1>Agenda</h1>
+    <%= link_to "Crea tu cita", new_appointment_path, class:"btn btn-outline-secondary btn-sm" %>
+    <%= week_calendar(events: @appointments) do |date, appointments| %>
+      <%= date.day %>
 
-    <% appointments.each do |appointment| %>
-      <div class="event">
-        <div class = "card-header">
-          <%= link_to appointment.title, appointment_path(appointment) %>
+      <% appointments.each do |appointment| %>
+        <div class="event">
+          <div class="card-header">
+            <%= link_to appointment.title, appointment_path(appointment) %>
+          </div>
+          <div class="card-body">
+            <p>
+              <%=appointment.description%>
+            </p>
+          </div>
+          <div class="cars-footer">
+            <p class="card-text">
+              <%= appointment.start_time.strftime("%I:%M %p")%>
+              <%= appointment.end_time.strftime("- %I:%M %p")%>
+            </p>
+          </div>
         </div>
-        <div class="card-body">
-          <p>
-            <%=appointment.description%>
-          </p>
-        </div>
-        <div class="cars-footer">
-          <p class="card-text">
-            <%= appointment.start_time.strftime("%I:%M %p")%>
-            <%= appointment.end_time.strftime("- %I:%M %p")%>
-          </p>
-        </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
-  <%= link_to "Regresar a citas", appointments_path %>
- </div>
+    <%= link_to "Regresar a citas", appointments_path %>
+  </div>
 </div>
