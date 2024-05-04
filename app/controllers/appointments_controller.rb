@@ -34,7 +34,6 @@ class AppointmentsController < ApplicationController
     end
   end
 
-
   # PATCH/PUT /appointments/1 or /appointments/1.json
   def update
     respond_to do |format|

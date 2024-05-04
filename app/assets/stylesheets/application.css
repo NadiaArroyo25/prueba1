@@ -27,9 +27,6 @@ body {
     color: #e0868f;
     background-color: #fff;
   }
-.table td {
+.table td.day {
   width: 14%;
 }
-
-
-
