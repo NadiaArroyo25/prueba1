@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :appointments
+  resources :appointments do
+    collection do
+      get :calendar
+    end
+    member do
+      get :postpone
+    end
+  end
   devise_for :usuarios
   get 'home/index'
   get 'privacidad', to: "statics#privacy"
@@ -8,7 +15,7 @@ Rails.application.routes.draw do
   get 'statics/privacy'
   get'statics/specialitie'
   get'statics/treatment'
-  get'agenda/agenda'
+
 
   resources :patients do
     resources :medical_records

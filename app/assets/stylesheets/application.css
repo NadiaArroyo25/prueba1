@@ -17,7 +17,16 @@
 
 
 body {
-    background-color: #f8e8ee; 
+    background-color: #f8e8ee;
 }
-
-  
+.simple-calendar {
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e0868f;
+    background-color: #fff;
+  }
+.simple-calendar td {
+  width: 14%;
+}
