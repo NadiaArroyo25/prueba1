@@ -3,7 +3,7 @@ class MedicalRecordsController < ApplicationController
 
   # GET /medical_records or /medical_records.json
   def index
-    @medical_records = MedicalRecord.where(patient_id: params[:patient_id]).all
+    @medical_records = MedicalRecord.where(patient_id: params[:patient_id], usuario_id: current_usuario.id)
   end
 
   # GET /medical_records/1 or /medical_records/1.json
@@ -22,6 +22,7 @@ class MedicalRecordsController < ApplicationController
   # POST /medical_records or /medical_records.json
   def create
     @medical_record = MedicalRecord.new(medical_record_params)
+    @medical_record.usuario_id = current_usuario.id
     respond_to do |format|
       if @medical_record.save
         format.html { redirect_to patient_medical_records_path(params[:patient_id]), notice: "Medical record was successfully created." }
@@ -50,7 +51,6 @@ class MedicalRecordsController < ApplicationController
   def destroy
     @medical_record = MedicalRecord.find(params[:id])
     @medical_record.destroy!
-
     respond_to do |format|
       format.html { redirect_to patient_path(params[:patient_id]), notice: "Medical record was successfully destroyed." }
       format.json { head :no_content }
