@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   get'statics/specialitie'
   get'statics/treatment'
 
-
   resources :patients do
     resources :medical_records
   end
