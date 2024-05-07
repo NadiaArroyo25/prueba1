@@ -20,8 +20,8 @@ class MedicalRecordsController < ApplicationController
 
   # POST /medical_records or /medical_records.json
   def create
+    medical_record_params.merge!(usuario_id: current_usuario.id)
     @medical_record = MedicalRecord.new(medical_record_params)
-    @medical_record.usuario_id = current_usuario.id
     respond_to do |format|
       if @medical_record.save
         format.html { redirect_to patient_medical_records_path(params[:patient_id]), notice: "Medical record was successfully created." }
