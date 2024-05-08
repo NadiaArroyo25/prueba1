@@ -3,7 +3,7 @@ class MedicalRecordsController < ApplicationController
 
   # GET /medical_records or /medical_records.json
   def index
-    @medical_records = MedicalRecord.where(patient_id: params[:patient_id], usuario_id: current_usuario.id)
+    @medical_records = MedicalRecord.where(patient_id: params[:patient_id], user_id: current_user.id)
   end
 
   # GET /medical_records/1 or /medical_records/1.json
@@ -22,7 +22,7 @@ class MedicalRecordsController < ApplicationController
   # POST /medical_records or /medical_records.json
   def create
     @medical_record = MedicalRecord.new(medical_record_params)
-    @medical_record.usuario_id = current_usuario.id
+    @medical_record.user_id = current_user.id
     respond_to do |format|
       if @medical_record.save
         format.html { redirect_to patient_medical_records_path(params[:patient_id]), notice: "Medical record was successfully created." }

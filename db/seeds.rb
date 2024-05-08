@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-usuarios = [
+users = [
     {
     email: "paola@example.com",
     password: "contraseña",
@@ -24,9 +24,9 @@ usuarios = [
         password_confirmation: "contraseña3"
         }
 ]
-usuarios.each do |usuario|
-    Usuario.create(usuario)
-end 
+users.each do |user|
+    User.create(user)
+end
 
 paciente = {
     first_name: "Susana",
