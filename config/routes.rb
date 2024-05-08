@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       get :postpone
     end
   end
-  devise_for :users
+  devise_for :usuarios
   get 'home/index'
   get 'privacidad', to: "statics#privacy"
   get 'statics/about_us'
