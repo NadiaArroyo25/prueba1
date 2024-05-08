@@ -15,8 +15,8 @@
         <%= link_to "Tratamientos", statics_treatment_path, class: "nav-item nav-link" %>
         <%= link_to "Contacto", statics_contact_path, class: "nav-item nav-link" %>
         <% if user_signed_in? %>
-        <%= link_to "Mis pacientes", patients_path, class: "nav-item nav-link" %>
-        <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "nav-item nav-link btn btn-outline-secondary btn-sm" %>
+          <%= link_to "Mis pacientes", patients_path, class: "nav-item nav-link" %>
+          <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "nav-item nav-link btn btn-outline-secondary btn-sm" %>
         <% else %>
           <%= button_to "Iniciar Sesión", new_user_session_path, class: "nav-item nav-link btn btn-outline-secondary btn-sm" %>
         <% end %>
