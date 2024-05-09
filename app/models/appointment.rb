@@ -1,7 +1,7 @@
 class Appointment < ApplicationRecord
   validate :delimitation_of_appointment_time
-  validates :title, presence: {message:"es obligatorio"}
-  validates :start_time, presence: {message:"es obligatorio"}
+  validates :title, presence: { message: "es obligatorio" }
+  validates :start_time, presence: { message: "es obligatorio" }
 
   private
 
