@@ -1,7 +1,7 @@
 <div class="container">
   <%= form_with(model: patient) do |form| %>
     <% if patient.errors.any? %>
-      <div style="color: red">
+      <div class="text-danger">
         <h2><%= pluralize(patient.errors.count, "error") %> No se puede crear el nuevo paciente:</h2>
 
         <ul>
