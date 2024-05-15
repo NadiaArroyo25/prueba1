@@ -23,12 +23,13 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
-gem "pry"  
+gem "pry"
 
 gem 'devise', '~> 4.9', '>= 4.9.3'
 
 gem "simple_calendar"
-
+gem "state_machines"
+gem "state_machines-activerecord"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -43,7 +44,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
- 
+
 gem 'pg'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
@@ -58,7 +59,7 @@ group :development do
   gem "letter_opener"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  # Use sqlite3 as the database for Active Record lo movi 
+  # Use sqlite3 as the database for Active Record lo movi
   #gem "sqlite3", "~> 1.4" se quito por lo de posgres
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
