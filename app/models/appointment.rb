@@ -1,4 +1,5 @@
 class Appointment < ApplicationRecord
+  add-state-machine
   validate :delimitation_of_appointment_time, on: :create
   state_machine :state, initial: :scheduled do
     state :scheduled
@@ -16,6 +17,10 @@ class Appointment < ApplicationRecord
       transition from: :scheduled, to: :cancelled
     end
   end
+  
+  validate :delimitation_of_appointment_time
+  validates :title, presence: { message: "es obligatorio" }
+  validates :start_time, presence: { message: "es obligatorio" 
 
   private
 
