@@ -1,29 +1,22 @@
 <div class="container">
-<div id="<%= dom_id appointment %>">
- <table class="table table-striped">
-  
-  <tbody>
-      <th scope="row">Nombre del paciente</th>
-      <td><%= appointment.title %></th>
-      
-    <tr>
-      <th scope="row">Description:</th>
-      <td><%= appointment.description %></td>
-    </tr>
-    <tr>
-      <th scope="row">Hora de inicio</th>
-      <td><%= appointment.start_time %></td>
-    </tr>
-    <tr>
-      <th scope="row">Final</th>
-      <td> <%= appointment.end_time %></td>
-    </tr>
-  </tbody>
-</table>
+  <div id="<%= dom_id appointment %>">
+    <table class="table table-striped">
+      <tbody>
+          <th scope="row">Nombre del paciente</th>
+          <td><%= appointment.title %></td>
+        <tr>
+          <th scope="row">Description:</th>
+          <td><%= appointment.description %></td>
+        </tr>
+        <tr>
+          <th scope="row">Hora de inicio</th>
+          <td><%= appointment.start_time.to_fs(:short) %></td>
+        </tr>
+        <tr>
+          <th scope="row">Final</th>
+          <td> <%= appointment.end_time.to_fs(:short) %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-</div>
-
-
- 
-        
-
