@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag("logo.png", alt: "Logo", width: 30, height: 24, class: "d-inline-block align-text-top") %>
@@ -9,12 +9,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-
         <%= link_to "Acerca de nosotros", statics_about_us_path, class: "nav-item nav-link" %>
-        <%= link_to "Especialidades", statics_specialitie_path, class: "nav-item nav-link" %>
         <%= link_to "Tratamientos", statics_treatment_path, class: "nav-item nav-link" %>
         <%= link_to "Contacto", statics_contact_path, class: "nav-item nav-link" %>
         <% if user_signed_in? %>
+          <%= link_to "Mis citas", appointments_path, class: "nav-item nav-link" %>
           <%= link_to "Mis pacientes", patients_path, class: "nav-item nav-link" %>
           <%= button_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "nav-item nav-link btn btn-outline-secondary btn-sm" %>
         <% else %>
@@ -23,7 +22,6 @@
         </ul>
     </div>
   </div>
-
-  </nav>
+</nav>
 
 
