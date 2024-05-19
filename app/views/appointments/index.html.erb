@@ -1,5 +1,5 @@
 <div class= "container ">
-  <p style="color: green"><%= notice %></p>
+   <p class="text-success"><%= notice %></p>
   <blockquote class="blockquote text-center">
     <h1> TODAS LAS CITAS</h1>
     <%= link_to "CALENDARIO", calendar_appointments_path, class:"btn btn-outline-secondary btn-sm" %>
@@ -15,10 +15,10 @@
     <tbody>
       <% @appointments.each do |appointment| %>
       <tr>
-      <td><i class="fa-regular fa-calendar"></i></td>
-      <td><%=appointment.title%></td>
-      <td> <%=appointment.start_time.to_fs(:short) %></td>
-      <td><%= link_to "Muestra esta cita", appointment,class:"btn btn-outline-secondary btn-sm" %></td>
+        <td><i class="fa-regular fa-calendar"></i></td>
+        <td><%=appointment.title%></td>
+        <td> <%=appointment.start_time.to_fs(:short) %></td>
+        <td><%= link_to "Muestra esta cita", appointment,class:"btn btn-outline-secondary btn-sm" %></td>
       </tr>
       <% end %>
     </tbody>

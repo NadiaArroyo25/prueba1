@@ -33,4 +33,6 @@ body {
 .custom-icon {
   font-size: 100px;
 }
-
+.custom-container {
+  min-height: 120px;
+}
