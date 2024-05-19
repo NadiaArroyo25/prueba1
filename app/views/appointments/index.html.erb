@@ -14,12 +14,12 @@
     </thead>
     <tbody>
       <% @appointments.each do |appointment| %>
-      <tr>
-        <td><i class="fa-regular fa-calendar"></i></td>
-        <td><%=appointment.title%></td>
-        <td> <%=appointment.start_time.to_fs(:short) %></td>
-        <td><%= link_to "Muestra esta cita", appointment,class:"btn btn-outline-secondary btn-sm" %></td>
-      </tr>
+        <tr>
+          <td><i class="fa-regular fa-calendar"></i></td>
+          <td><%=appointment.title%></td>
+          <td> <%=appointment.start_time.to_fs(:short) %></td>
+          <td><%= link_to "Muestra esta cita", appointment,class:"btn btn-outline-secondary btn-sm" %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>
