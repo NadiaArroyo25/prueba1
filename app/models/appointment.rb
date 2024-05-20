@@ -1,5 +1,5 @@
 class Appointment < ApplicationRecord
-  add_state_machine
+  state_machine
   validate :delimitation_of_appointment_time, on: :create
   state_machine :state, initial: :scheduled do
     state :scheduled

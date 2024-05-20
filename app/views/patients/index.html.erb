@@ -1,24 +1,29 @@
-<p style="color: green"><%= notice %></p>
 <div class= "container ">
-<h1>Pacientes</h1>
-<%= link_to "Nuevo paciente", new_patient_path,class:"btn btn-outline-secondary btn-sm"%>
-
-<table class="table table-striped"> 
-  <thead> 
-    <tr> 
-      <th>Nombre</th>
-      <th>Apellido</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @patients.each do |patient| %>
+   <p class="text-success"><%= notice %></p>
+  <blockquote class="blockquote text-center">
+    <h1>PACIENTES</h1>
+    <%= link_to "Nuevo paciente", new_patient_path,class:"btn btn-outline-secondary btn-sm"%>
+  </blockquote>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td> <%= patient.first_name %> </td>
-        <td> <%= patient.last_name %> </td>
-        <td> <%= link_to "Mostrar este paciente", patient %> </td>
+        <th></th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Fecha</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><i class="fa-solid fa-person"></i></td>
+          <td> <%= patient.first_name %> </td>
+          <td> <%= patient.last_name %> </td>
+          <td> <%= patient.created_at.strftime("%d/%m/%Y") %>
+          <td> <%= link_to "Mostrar este paciente", patient, class:"btn btn-outline-secondary btn-sm" %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 

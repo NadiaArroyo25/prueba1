@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments or /appointments.json
   def index
-    @appointments = Appointment.all
+    @appointments = Appointment.order(created_at: :desc)
   end
 
   # GET /appointments/1 or /appointments/1.json
