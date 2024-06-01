@@ -19,10 +19,22 @@
           <td><%=appointment.title%></td>
           <td> <%=appointment.start_time.to_fs(:short) %></td>
           <td><%= link_to "Muestra esta cita", appointment,class:"btn btn-outline-secondary btn-sm" %></td>
+            <td><%= link_to "Posponer", new_appointment_path(preloaded_appointment_id: appointment.id), class: "btn btn-outline-secondary btn-sm" %></td>
+
+
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+<script>
+  $(document).ready(function() {
+    $('.reprogrmarcita-btn').click(function(event) {
+      event.preventDefault();
+      var appointmentId = $(this).data('appointment-id');
+      window.location.href = "/appointments/new?preloaded_appointment_id=" + appointmentId;
+    });
+  });
+</script>
 
 
