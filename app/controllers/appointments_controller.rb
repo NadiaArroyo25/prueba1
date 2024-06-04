@@ -13,10 +13,10 @@ class AppointmentsController < ApplicationController
   # GET /appointments/new
   def new
     @appointment = Appointment.new
-      if params[:preloaded_appointment_id]
-        preloaded_appointment = Appointment.find(params[:preloaded_appointment_id])
-        @appointment.title = preloaded_appointment.title
-        @appointment.description = preloaded_appointment.description
+    if params[:preloaded_appointment_id]
+      preloaded_appointment = Appointment.find(params[:preloaded_appointment_id])
+      @appointment.title = preloaded_appointment.title
+      @appointment.description = preloaded_appointment.description
     end
   end
 
