@@ -1,24 +1,28 @@
 <div id="<%= dom_id medical_record %>">
-<table class="table table-striped">
-  <tbody>
-      <th scope="row">Patologías:</th>
-      <td><%= medical_record.patology %></td>
-
-    <tr>
-      <th scope="row">Habitos:</th>
-      <td><%= medical_record.habits %></td>
-    </tr>
-    <tr>
-      <th scope="row">Esta de salud:</th>
-      <td><%=medical_record.current_state %></td>
-    </tr>
-    <tr>
-      <th scope="row">Notas</th>
-      <td><%= medical_record.notes %></td>
-    </tr>
-
-  </tbody>
-</table>
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">Patologías:</th>
+        <td><%= medical_record.patology %></td>
+      </tr>
+      <tr>
+        <th scope="row">Habitos:</th>
+        <td><%= medical_record.habits %></td>
+      </tr>
+      <tr>
+        <th scope="row">Esta de salud:</th>
+        <td><%=medical_record.current_state %></td>
+      </tr>
+      <tr>
+        <th scope="row">Notas</th>
+        <td><%= medical_record.notes %></td>
+      </tr>
+      <tr>
+        <th scope="row">Fecha de elaboracion</th>
+        <td><%= medical_record.created_at.strftime("%d/%m/%Y") %></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 
