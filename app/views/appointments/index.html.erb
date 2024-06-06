@@ -30,14 +30,6 @@
     </tbody>
   </table>
 </div>
-<script>
-  $(document).ready(function() {
-    $(".posponer").click(function(event) {
-      event.preventDefault();
-      var appointmentId = $(this).attr("id").replace("appointment_", '');
-      window.location.href = "/appointments/new?preloaded_appointment_id=" + appointmentId;
-    });
-  });
-</script>
+
 
 
