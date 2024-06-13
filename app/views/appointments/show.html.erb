@@ -1,11 +1,11 @@
 <div class="container">
-<p style="color: green"><%= notice %></p>
-
-<%= render @appointment %>
-
+  <div class="title-container">
+    <h1> Cita</h1>
+  </div>
+  <p class="text_succes"><%= notice %></p>
+  <%= render @appointment %>
 
   <%= link_to "Editar estas cita", edit_appointment_path(@appointment) %> |
   <%= link_to "Regresar a las citas", appointments_path %>
-
   <%= button_to "Destroy this appointment", @appointment, method: :delete, class: "btn btn-secondary" %>
 </div>

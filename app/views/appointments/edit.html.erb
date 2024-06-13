@@ -1,7 +1,9 @@
 <div class="container">
-<h1>Editar cita</h1>
+  <div class="title-container">
+    <h1>Editar cita</h1>
+  </div>
 
-<%= render "form", appointment: @appointment %>
+  <%= render "form", appointment: @appointment %>
 
   <%= link_to "Muestra esta cita", @appointment %> |
   <%= link_to "Regresa a las citas ", appointments_path %>

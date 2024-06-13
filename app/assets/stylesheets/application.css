@@ -36,3 +36,8 @@ body {
 .custom-container {
   min-height: 120px;
 }
+.title-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
