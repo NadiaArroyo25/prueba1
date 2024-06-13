@@ -3,12 +3,7 @@
     <h1>Nueva cita</h1>
   </div>
 
+  <%= render "form", appointment: @appointment %>
 
-<%= render "form", appointment: @appointment %>
-
-<br>
-
-<div>
   <%= link_to "Regresa a citas", appointments_path %>
-</div>
 </div>
