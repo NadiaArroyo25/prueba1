@@ -1,10 +1,9 @@
-<h1>Editing patient</h1>
+<div class="container">
+  <div class="title-container">
+    <h1>Editar paciente</h1>
+  </div>
+  <%= render "form", patient: @patient %>
 
-<%= render "form", patient: @patient %>
-
-<br>
-
-<div>
   <%= link_to "Muestra este paciente", @patient %> |
   <%= link_to "Regresa a paciente", patients_path %>
 </div>
