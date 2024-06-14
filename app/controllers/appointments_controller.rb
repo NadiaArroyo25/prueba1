@@ -18,6 +18,11 @@ class AppointmentsController < ApplicationController
       @appointment.title = preloaded_appointment.title
       @appointment.description = preloaded_appointment.description
     end
+    if params[:selected_date]
+      @appointment.start_time = params[:selected_date].to_datetime
+      #@appointment.hour = selected_date.hour
+      @appointment.end_time = params[:selected_date].to_datetime + 1.hour
+    end
   end
 
   # GET /appointments/1/edit
@@ -74,6 +79,6 @@ class AppointmentsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def appointment_params
-    params.require(:appointment).permit(:title, :description, :start_time, :end_time)
+    params.require(:appointment).permit(:title, :description, :start_time, :end_time, :selected_date)
   end
 end
