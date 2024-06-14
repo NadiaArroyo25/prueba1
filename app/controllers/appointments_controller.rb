@@ -20,7 +20,6 @@ class AppointmentsController < ApplicationController
     end
     if params[:selected_date]
       @appointment.start_time = params[:selected_date].to_datetime
-      #@appointment.hour = selected_date.hour
       @appointment.end_time = params[:selected_date].to_datetime + 1.hour
     end
   end
