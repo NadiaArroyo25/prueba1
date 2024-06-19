@@ -9,11 +9,11 @@
           <% (8..20).each do |hour| %>
             <div>
               <strong><%= "%02d:00" % hour %></strong>
-              <% if appointments.any? { |appointment| appointment.start_time.hour == hour } %>
+               <% if appointments.any? { |appointment| appointment.start_time.hour == hour } %>
                 <% appointments.select { |appointment| appointment.start_time.hour == hour }.each do |appointment| %>
                   <div class="event">
                     <div class="card-header">
-                      <a class="badge badge-success" href="<%= appointment_path(appointment) %>"><%= appointment.title %></a>
+                     <%= link_to appointment.title, appointment_path(appointment), class: "badge badge-success" %>
                     </div>
                   </div>
                 <% end %>
