@@ -3,17 +3,17 @@
     <h1>Agenda</h1>
     <%= link_to "Nueva cita", new_appointment_path, class:"btn btn-outline-secondary btn-sm" %>
     <%= week_calendar(events: @appointments) do |date, appointments| %>
-     <%= puts date %>
+      <%= puts date %>
       <div class="row">
         <div class="col">
           <% (8..20).each do |hour| %>
             <div>
               <strong><%= "%02d:00" % hour %></strong>
-               <% if appointments.any? { |appointment| appointment.start_time.hour == hour } %>
+              <% if appointments.any? { |appointment| appointment.start_time.hour == hour } %>
                 <% appointments.select { |appointment| appointment.start_time.hour == hour }.each do |appointment| %>
                   <div class="event">
                     <div class="card-header">
-                     <%= link_to appointment.title, appointment_path(appointment), class: "badge badge-success" %>
+                      <%= link_to appointment.title, appointment_path(appointment), class: "badge badge-success" %>
                     </div>
                   </div>
                 <% end %>
@@ -26,7 +26,9 @@
               <% end %>
             </div>
           <% end %>
-      <% end %>
+        </div>
+      </div>
+    <% end %>
     <%= link_to "Regresar a citas", appointments_path %>
   </div>
 </div>
