@@ -1,16 +1,16 @@
 <div class="container">
-<%= form_with(model: [medical_record.patient, medical_record]) do |form| %>
-  <% if medical_record.errors.any? %>
-    <div style="color: red">
+  <%= form_with(model: [medical_record.patient, medical_record]) do |form| %>
+    <% if medical_record.errors.any? %>
+      <div style="color: red">
 
       <h2><%= pluralize(medical_record.errors.count, "error") %> prohibited this medical_record from being saved:</h2>
 
-      <ul>
-        <% medical_record.errors.full_messages.each do |error| %>
-          <li><%= error.html_safe %></li>
-        <% end %>
-      </ul>
-    </div>
+        <ul>
+         <% medical_record.errors.full_messages.each do |error| %>
+            <li><%= error.html_safe %></li>
+          <% end %>
+        </ul>
+      </div>
   <% end %>
 
   <div>
@@ -22,31 +22,46 @@
   </div>
 
   <div>
-    <%= form.label :patology, style: "display: block" %>
+    <%= form.label :reason_consultation, "Motivo de consulta", style: "display: block" %>
+    <%= form.text_area :reason_consultation %>
+  </div>
+
+  <div>
+    <%= form.label :patology,"Antecedentes personales patológicos" ,style: "display: block" %>
     <%= form.text_area :patology %>
   </div>
 
   <div>
-    <%= form.label :habits, style: "display: block" %>
-    <%= form.text_area :habits %>
+    <%= form.label :non_pathological_personal_record, "Antecedentes personales no patológicos",style: "display: block" %>
+    <%= form.text_area :non_pathological_personal_record %>
   </div>
 
   <div>
-    <%= form.label :current_state, style: "display: block" %>
+    <%= form.label :habits, "habitos",style: "display: block" %>
+    <%= form.text_area :habits %>
+  </div>
+  <div>
+    <%= form.label :hereditary_family_history, "Antecedentes heredofamiliares", style: "display: block" %>
+    <%= form.text_area :hereditary_family_history %>
+  </div>
+
+  <div>
+    <%= form.label :current_state, "Estado actual del paciente",style: "display: block" %>
     <%= form.text_field :current_state %>
   </div>
 
   <div>
-    <%= form.label :notes, style: "display: block" %>
+    <%= form.label :notes, "notas de evolución",style: "display: block" %>
     <%= form.text_area :notes, rows: 5 %>
   </div>
 
   <div>
+    <p>*El odontograma es de referencia para identificar los organos dentarios*</p>
     <%= image_tag("Odontogram.jpg", class: "d-block w-100") %>
   </div>
-
+  <br>
   <div>
     <%= form.submit %>
   </div>
-<% end %>
+  <% end %>
 </div>

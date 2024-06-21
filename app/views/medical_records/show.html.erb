@@ -1,8 +1,8 @@
-<p style="color: green"><%= notice %></p>
-<%= @medical_record.patient.first_name %>
-<%= render @medical_record %>
+<div class="container">
+  <p class="text-success"><%= notice %></p>
+  <%= @medical_record.patient.first_name %>
+  <%= render @medical_record %>
 
-<div>
   <%= link_to "Edit this medical record", edit_patient_medical_record_path(params[:patient_id]) %> |
   <%= link_to "Back records", patient_medical_records_path(params[:patient_id])%>
   <%= button_to "Destroy this medical record", patient_medical_record_path(params[:patient_id], @medical_record), method: :delete, data: { confirm: 'Are you sure?' } %>
