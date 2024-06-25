@@ -18,10 +18,6 @@ class AppointmentsController < ApplicationController
       @appointment.title = preloaded_appointment.title
       @appointment.description = preloaded_appointment.description
     end
-    if params[:selected_date]
-      @appointment.start_time = params[:selected_date].to_datetime
-      @appointment.end_time = params[:selected_date].to_datetime + 1.hour
-    end
   end
 
   # GET /appointments/1/edit
