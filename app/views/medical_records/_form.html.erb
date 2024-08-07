@@ -6,7 +6,7 @@
       <h2><%= pluralize(medical_record.errors.count, "error") %> prohibited this medical_record from being saved:</h2>
 
         <ul>
-         <% medical_record.errors.full_messages.each do |error| %>
+          <% medical_record.errors.full_messages.each do |error| %>
             <li><%= error.html_safe %></li>
           <% end %>
         </ul>
