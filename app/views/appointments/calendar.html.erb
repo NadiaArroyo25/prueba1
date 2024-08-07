@@ -2,6 +2,7 @@
   <div class="container mt-5 text-center">
     <h1>Agenda</h1>
     <%= link_to "Nueva cita", new_appointment_path, class:"btn btn-outline-secondary btn-sm" %>
+
     <%= week_calendar(events: @appointments) do |date, appointments| %>
       <%= date.day %>
 
@@ -22,7 +23,7 @@
             </p>
           </div>
         </div>
-     <% end %>
+      <% end %>
     <% end %>
     <%= link_to "Regresar a citas", appointments_path %>
   </div>
