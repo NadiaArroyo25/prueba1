@@ -3,7 +3,7 @@
     <h1>Agenda</h1>
     <%= link_to "Nueva cita", new_appointment_path, class:"btn btn-outline-secondary btn-sm" %>
     <%= week_calendar(events: @appointments) do |date, appointments| %>
-     <%= puts date %>
+     <%  puts date %>
       <div class="row">
         <div class="col">
           <% (8..20).each do |hour| %>
