@@ -67,4 +67,4 @@ class MedicalRecordsController < ApplicationController
     def medical_record_params
       params.require(:medical_record).permit(:patient_id, :patology, :habits, :current_state, :notes, :reason_consultation,  :hereditary_family_history, :non_pathological_personal_record)
     end
-  end
+end
