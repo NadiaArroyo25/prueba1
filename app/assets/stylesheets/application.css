@@ -15,29 +15,31 @@
  */
 /* En tu archivo CSS personalizado */
 
-
 body {
-    background-color: #f8e8ee;
+  background-color: #f8e8ee;
 }
 .simple-calendar {
-    width: 100%;
-    border: 1px solid #ccc;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #e0868f;
-    background-color: #fff;
+  width: 100%;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #e0868f;
+  background-color: #fff;
   }
+
 .simple-calendar td {
   width: 14%;
 }
+
 .custom-icon {
   font-size: 100px;
 }
+
 .custom-container {
   min-height: 120px;
 }
+
 .title-container {
   text-align: center;
   margin-bottom: 20px;
 }
-

@@ -2,15 +2,27 @@
   <table class="table table-striped">
     <tbody>
       <tr>
+        <th scope="row">Motivo de consulta:</th>
+        <td><%= medical_record.reason_consultation %></td>
+      </tr>
+      <tr>
         <th scope="row">Patologías:</th>
         <td><%= medical_record.patology %></td>
+      </tr>
+      <tr>
+        <th scope="row">Antecedentes personales no patologicos:</th>
+        <td><%= medical_record.non_pathological_personal_record %></td>
       </tr>
       <tr>
         <th scope="row">Habitos:</th>
         <td><%= medical_record.habits %></td>
       </tr>
       <tr>
-        <th scope="row">Esta de salud:</th>
+        <th scope="row">Antecedentes Heredofamiliares:</th>
+        <td><%= medical_record.hereditary_family_history %></td>
+      </tr>
+      <tr>
+        <th scope="row">Estado de salud:</th>
         <td><%=medical_record.current_state %></td>
       </tr>
       <tr>
