@@ -15,7 +15,6 @@
  */
 /* En tu archivo CSS personalizado */
 
-
 body {
   background-color: #f8e8ee;
 }
@@ -27,15 +26,19 @@ body {
   color: #e0868f;
   background-color: #fff;
   }
+
 .simple-calendar td {
   width: 14%;
 }
+
 .custom-icon {
   font-size: 100px;
 }
+
 .custom-container {
   min-height: 120px;
 }
+
 .title-container {
   text-align: center;
   margin-bottom: 20px;
